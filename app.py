@@ -107,13 +107,7 @@ available_movies = {  # Our movies are organised based on the movie_id of each i
 def home():
     return render_template("index.html")
 
-# @app.route('/<name>')
-# def user(name):
-#     return f"Hello {name}!"
 
-# @app.route('/admin')
-# def admin():
-#     return redirect(url_for("user", name="Admin!"))
 
 @app.route('/contact')
 def contact():
@@ -152,31 +146,6 @@ def order(movie_id):
     else:
         return "Sorry, there no tickets remaining for this movie"
 
-
-# @app.route('/admin/item/<sku>', methods=["POST"])
-# def set_item(sku):
-#     existing_item = items_in_stock.get(sku)
-#     if existing_item:
-#         name = request.form.get("name", existing_item["name"])
-#         description = request.form.get("description", existing_item["description"])
-#         price = float(request.form.get("price", existing_item["price"]))
-#         amount = int(request.form.get("amount", existing_item["amount"]))
-#         image_url = request.form.get("image_url", existing_item["image_url"])
-#     else:
-#         name = request.form["name"]
-#         description = request.form["description"]
-#         price = float(request.form["price"])
-#         amount = int(request.form["amount"])
-#         image_url = request.form["image_url"]
-
-#     items_in_stock[sku] = {
-#         "name": name,
-#         "description": description,
-#         "price": price,
-#         "amount": amount,
-#         "image_url": image_url,
-#     }
-#     return redirect(url_for("products"))
 
 
 if __name__ == '__main__':
