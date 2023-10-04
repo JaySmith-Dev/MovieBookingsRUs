@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<br>
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+    {% for movie_id, film in movies %}
+    <a href="{{ url_for('film', movie_id=movie_id) }}">
+      <figure class="figure">
+        <!-- <img src="{{ film['image_url']}}" alt="{{ film['title'] }}"> -->
+        <img src="{{url_for('static', filename=film['image_loc'])}}">
+        <figcaption class="figure-caption">
+          <strong>{{ film['title'] }}</strong>
+        </figcaption>
+      </figure>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

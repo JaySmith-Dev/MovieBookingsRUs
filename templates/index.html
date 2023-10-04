@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="card text-center" style="width: auto;">
+    <div class="card-body">
+        <a href="{{ url_for('movies') }}"><img src="{{url_for('static', filename='/images/MovieBookingsRUs_Small.jpg')}}" alt="Logo"></a>
+        <br><br>
+        <h1>Welcome to MovieBookings'R'Us</h1>
+        <br>
+        <h3><a href="{{ url_for('movies') }}">Check out the latest showings at your nearest cinema!</a></h3>
+        <br>
+
+        <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+            <img src="{{url_for('static', filename='/images/HauntingInVenice-350x525.jpg')}}" style="height:50%">
+            <div class="text">A Haunting in Venice</div>
+            </div>
+            <div class="mySlides">
+            <img src="{{url_for('static', filename='/images/Featured-NUN-2-350x525.jpg')}}" style="height:50%">
+            <div class="text">The Nun II</div>
+            </div>
+            <div class="mySlides">
+            <img src="{{url_for('static', filename='/images/PastLives-350x525.jpg')}}" style="height:50%">
+            <div class="text">Past Lives</div>
+            </div>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

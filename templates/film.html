@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+    <h1>{{ film['title'] }}</h1>
+
+    <figure class="figure">
+      <img src="{{ film['image_url']}}" alt="{{ film['synopsis'] }}">
+      <figcaption class="figure-caption">
+        <br>
+          <h4>Synopsis</h4>
+          <i>{{ film['synopsis'] }}</i>
+        <br><br>
+          <strong>Ticket Price - </strong>€{{ film['ticket_price'] }}
+        <br><br>
+          <strong>Available Tickets - </strong>{{ film['tickets_remaining'] }}
+        <br><br>
+          <strong>Release Date - </strong>{{ film['release_date'] }}
+        <br><br>
+          <strong>Running Time - </strong>{{ film['running_time'] }}
+        <br><br>
+          <strong>Director - </strong>{{ film['director'] }}
+        <br><br>
+          <strong>Cast - </strong>{{ film['cast'] }}
+      </figcaption>
+    </figure>
+
+    <form method="POST" action="{{ url_for('order', movie_id=movie_id) }}">
+      <button type="submit" class="btn btn-primary">Book tickets for  {{ film['title'] }}</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

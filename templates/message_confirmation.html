@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Your message has been sent!{% endblock %}
+
+{% block content %}
+<br>
+<div class="card text-center" style="width: auto;">
+    <div class="card-body">
+        <h3><a href="{{ url_for('home') }}">Thanks for sending us your message, click here to return to home</a></h3>
+    </div>
+</div>
+{% endblock %}
